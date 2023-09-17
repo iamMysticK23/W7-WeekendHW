@@ -1,0 +1,47 @@
+/* CSS Styling */
+
+body {
+    background-color: rgb(23, 23, 23);
+    background-image: url('/images/nature-bkg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+   
+}
+
+/* change color of city once it's displayed */
+.col-12 h2 {
+    color:rgb(36, 203, 181);
+    font-weight: bold;
+}
+
+.forecast p {
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #b2cfc6; 
+}
+
+.temps {
+    color:rgb(199, 224, 75);
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* change colors of high, low and humidity */
+.col-4.text-center.text-uppercase.high h3 {
+    color: rgb(214, 65, 65); 
+    font-weight: bold;
+}
+
+.col-4.text-center.text-uppercase.low h3 {
+    color: rgb(46, 77, 234); 
+    font-weight: bold;
+}
+
+.col-4.text-center.text-uppercase.humidity h3 {
+    color: rgb(64, 208, 162); 
+    font-weight: bold;
+}
+
+
