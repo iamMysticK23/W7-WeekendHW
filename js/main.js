@@ -27,7 +27,7 @@ const clearInputs = () => {
 };
 
 
-// Testing out icons to see if they will change dependent on the weather data brought back
+// Testing out adding weather icons to see if they will change dependent on the weather data brought back
 const getIconClassForWeather = (forecastDescription) => {
     if (forecastDescription.toLowerCase().includes('clear')) {
         return 'wi-sunny wi-large';
@@ -73,7 +73,11 @@ const getWeather = () => {
         alert('Please enter a city and state or a zip code.');
         return;
     }
-  
+
+  // I wanted a way to have a user either enter city and state or zip code
+  // looked up a way to use a variable named locationParam that allows a user to do this
+  // If the user only enters zip code, it defaults to the static city-picture unless a picture is found via Unsplash
+  // If the user enters a city and state then the city image can be pulled from Unsplash by grabCityImg
     let locationParam;
   
     if (zipInput) {
@@ -92,7 +96,8 @@ const getWeather = () => {
     
   
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?${locationParam},US&appid=${apiKey}`;
-    
+
+    // fetch information from API
     fetch(apiUrl)
       .then(response => response.json())
       .then(data => {
@@ -122,7 +127,7 @@ const getWeather = () => {
           // specific for wind gust data because sometimes it doesn't show up
           const windGustInfo = windGust !== undefined ? `WIND GUST: ${windGust} mph <br>` : 'WIND GUST: information not available<br>';
 
-    
+          // display forcast content and extras such as pressure, wind speed, wind gust and wind degree
           const forecastContent = `
           ${forecastDescription} <br>
           PRESSURE: ${forecastPressure} hPa <br>
@@ -133,7 +138,6 @@ const getWeather = () => {
     
          forecastElements.innerHTML = forecastContent;
          
-
         } else {
 
           // checks to see if the data is correct
