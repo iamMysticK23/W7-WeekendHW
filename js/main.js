@@ -77,7 +77,7 @@ const getWeather = () => {
   // I wanted a way to have a user either enter city and state or zip code
   // looked up a way to use a variable named locationParam that allows a user to do this
   // If the user only enters zip code, it defaults to the static city-picture unless a picture is found via Unsplash
-  // If the user enters a city and state then the city image can be pulled from Unsplash by grabCityImg
+  // If the user enters a city and state then the city image can be pulled from Unsplash by grabCityImg()
     let locationParam;
   
     if (zipInput) {
